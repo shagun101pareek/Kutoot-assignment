@@ -1,0 +1,5 @@
+1. The application successfully handled 250 requests with minimal errors.
+
+2. Average response time remained around 614 ms while simulating 50 concurrent users.
+
+3. A small percentage of 502 Bad Gateway errors occurred during peak load, indicating possible server stress under concurrency.
