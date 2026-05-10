@@ -7,7 +7,6 @@ app.use(express.json());
 
 let users = [];
 
-// GET endpoint
 app.get("/users", (req, res) => {
   res.status(200).json({
     success: true,
@@ -15,11 +14,9 @@ app.get("/users", (req, res) => {
   });
 });
 
-// POST endpoint
 app.post("/users", (req, res) => {
   const { name } = req.body;
 
-  // Error handling
   if (!name) {
     return res.status(400).json({
       success: false,
