@@ -17,6 +17,12 @@ html {
 body {
   background: #0f172a;
   color: white;
+  overflow-x: hidden;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
 }
 
 /* Navbar */
@@ -56,7 +62,8 @@ nav a:hover {
 
 section {
   min-height: auto;
-  padding: 0px 10%;
+  padding-left: max(16px, calc((100vw - var(--content-width)) / 2));
+  padding-right: max(16px, calc((100vw - var(--content-width)) / 2));
 }
 
 #home {
@@ -210,21 +217,91 @@ footer {
 
   nav {
     flex-direction: column;
-    gap: 20px;
+    gap: 16px;
+    padding-top: 16px;
+    padding-bottom: 16px;
+  }
+
+  nav h2 {
+    font-size: 1.35rem;
+    margin-bottom: 0;
   }
 
   nav ul {
     flex-wrap: wrap;
     justify-content: center;
+    gap: 12px 18px;
+  }
+
+  nav a {
+    font-size: 0.95rem;
   }
 
   h1 {
-    font-size: 2.5rem;
+    font-size: 2rem;
+    line-height: 1.2;
+  }
+
+  h2 {
+    font-size: 1.6rem;
+    margin-bottom: 20px;
   }
 
   section {
-    padding-top: 56px;
-    padding-bottom: 56px;
+    padding-top: 48px;
+    padding-bottom: 48px;
+  }
+
+  .about-container {
+    gap: 32px;
+    margin-top: 24px;
+  }
+
+  .about-content {
+    transform: none;
+  }
+
+  .about-text {
+    font-size: 1rem;
+    line-height: 1.75;
+  }
+
+  .projects-list {
+    gap: 48px;
+    margin-top: 24px;
+  }
+
+  .project-item {
+    padding: 20px 16px;
+  }
+
+  .project-header {
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .project-name {
+    font-size: 1.35rem;
+  }
+
+  .project-description,
+  .project-tech {
+    font-size: 0.9rem;
+  }
+
+  .expertise-card {
+    padding: 24px 20px;
+    min-height: auto;
+  }
+
+  .cards-container {
+    margin-top: 32px;
+    gap: 16px;
+  }
+
+  .skills-wrapper {
+    margin-top: 28px;
   }
 }
 
@@ -336,6 +413,9 @@ footer {
   font-size: 0.95rem;
 
   opacity: 0.9;
+
+  word-wrap: break-word;
+  overflow-wrap: anywhere;
 }
 
 .project-header {
@@ -687,10 +767,11 @@ footer {
   .about-container {
     flex-direction: column;
     text-align: center;
+    gap: 40px;
   }
 
   .avatar-orbit {
-    --size: 300px;
+    --size: min(300px, calc(100vw - 64px));
   }
 
   .orbit-icon {
@@ -707,11 +788,75 @@ footer {
 @media (max-width: 650px) {
   .expertise-grid {
     grid-template-columns: 1fr;
+    gap: 16px;
+    margin-top: 28px;
+  }
+
+  .avatar-orbit {
+    --size: min(260px, calc(100vw - 48px));
   }
 
   .carousel-nav {
     width: 36px;
     height: 36px;
     font-size: 1.2rem;
+  }
+
+  .project-carousel {
+    --carousel-slide-w: min(calc(100vw - 88px), 340px);
+    --carousel-peek: 0px;
+    padding: 16px 0;
+  }
+
+  .carousel-stage {
+    min-height: clamp(140px, 42vw, 280px);
+  }
+
+  .carousel-slide.is-active {
+    transform: translate(-50%, -50%) scale(1);
+  }
+
+  .carousel-slide.is-prev,
+  .carousel-slide.is-next {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0.85);
+    filter: none;
+    pointer-events: none;
+  }
+
+  .carousel-viewport {
+    padding: 12px 0;
+  }
+}
+
+@media (max-width: 400px) {
+  h1 {
+    font-size: 1.65rem;
+  }
+
+  h2 {
+    font-size: 1.4rem;
+  }
+
+  nav ul {
+    gap: 10px 14px;
+  }
+
+  nav a {
+    font-size: 0.88rem;
+  }
+
+  .visit-btn {
+    font-size: 0.9rem;
+    padding: 8px 14px;
+  }
+
+  .footer-bar {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .footer-sep {
+    display: none;
   }
 }
