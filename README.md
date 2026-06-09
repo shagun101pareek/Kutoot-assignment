@@ -34,5 +34,5 @@ Features:
 - Skills scroller
 - Interactive UI
 
-## Live Portfolio
-PASTE_YOUR_LIVE_LINK_HERE
+## My Portfolio
+https://shagun-portfolio-delta.vercel.app/
